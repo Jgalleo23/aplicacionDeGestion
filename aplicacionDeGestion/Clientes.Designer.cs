@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             datagridClientes = new DataGridView();
-            menuClientes = new MenuStrip();
-            altaclienteToolStripMenuItem = new ToolStripMenuItem();
-            bajaclienteToolStripMenuItem = new ToolStripMenuItem();
-            modificacionesclienteToolStripMenuItem = new ToolStripMenuItem();
             datagridCodigo = new DataGridViewTextBoxColumn();
             datagridNombre = new DataGridViewTextBoxColumn();
             datagridApellidos = new DataGridViewTextBoxColumn();
@@ -41,6 +37,11 @@
             datagridCP = new DataGridViewTextBoxColumn();
             datagridLocalidad = new DataGridViewTextBoxColumn();
             datagridPais = new DataGridViewTextBoxColumn();
+            menuClientes = new MenuStrip();
+            altaclienteToolStripMenuItem = new ToolStripMenuItem();
+            bajaclienteToolStripMenuItem = new ToolStripMenuItem();
+            modificacionesclienteToolStripMenuItem = new ToolStripMenuItem();
+            btVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)datagridClientes).BeginInit();
             menuClientes.SuspendLayout();
             SuspendLayout();
@@ -49,41 +50,12 @@
             // 
             datagridClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             datagridClientes.Columns.AddRange(new DataGridViewColumn[] { datagridCodigo, datagridNombre, datagridApellidos, datagridDNI, datagridTelefono, datagridCP, datagridLocalidad, datagridPais });
-            datagridClientes.Location = new Point(12, 89);
+            datagridClientes.Location = new Point(53, 77);
             datagridClientes.Name = "datagridClientes";
             datagridClientes.RowHeadersWidth = 51;
             datagridClientes.RowTemplate.Height = 29;
-            datagridClientes.Size = new Size(776, 188);
+            datagridClientes.Size = new Size(678, 188);
             datagridClientes.TabIndex = 0;
-            // 
-            // menuClientes
-            // 
-            menuClientes.ImageScalingSize = new Size(20, 20);
-            menuClientes.Items.AddRange(new ToolStripItem[] { altaclienteToolStripMenuItem, bajaclienteToolStripMenuItem, modificacionesclienteToolStripMenuItem });
-            menuClientes.Location = new Point(0, 0);
-            menuClientes.Name = "menuClientes";
-            menuClientes.Size = new Size(800, 28);
-            menuClientes.TabIndex = 1;
-            menuClientes.Text = "menuStrip1";
-            // 
-            // altaclienteToolStripMenuItem
-            // 
-            altaclienteToolStripMenuItem.Name = "altaclienteToolStripMenuItem";
-            altaclienteToolStripMenuItem.Size = new Size(50, 24);
-            altaclienteToolStripMenuItem.Text = "Alta";
-            altaclienteToolStripMenuItem.Click += altaclienteToolStripMenuItem_Click;
-            // 
-            // bajaclienteToolStripMenuItem
-            // 
-            bajaclienteToolStripMenuItem.Name = "bajaclienteToolStripMenuItem";
-            bajaclienteToolStripMenuItem.Size = new Size(52, 24);
-            bajaclienteToolStripMenuItem.Text = "Baja";
-            // 
-            // modificacionesclienteToolStripMenuItem
-            // 
-            modificacionesclienteToolStripMenuItem.Name = "modificacionesclienteToolStripMenuItem";
-            modificacionesclienteToolStripMenuItem.Size = new Size(124, 24);
-            modificacionesclienteToolStripMenuItem.Text = "Modificaciones";
             // 
             // datagridCodigo
             // 
@@ -125,6 +97,7 @@
             datagridCP.HeaderText = "CP";
             datagridCP.MinimumWidth = 6;
             datagridCP.Name = "datagridCP";
+            datagridCP.Visible = false;
             datagridCP.Width = 125;
             // 
             // datagridLocalidad
@@ -132,6 +105,7 @@
             datagridLocalidad.HeaderText = "Localidad";
             datagridLocalidad.MinimumWidth = 6;
             datagridLocalidad.Name = "datagridLocalidad";
+            datagridLocalidad.Visible = false;
             datagridLocalidad.Width = 125;
             // 
             // datagridPais
@@ -139,7 +113,49 @@
             datagridPais.HeaderText = "Pais";
             datagridPais.MinimumWidth = 6;
             datagridPais.Name = "datagridPais";
+            datagridPais.Visible = false;
             datagridPais.Width = 125;
+            // 
+            // menuClientes
+            // 
+            menuClientes.ImageScalingSize = new Size(20, 20);
+            menuClientes.Items.AddRange(new ToolStripItem[] { altaclienteToolStripMenuItem, bajaclienteToolStripMenuItem, modificacionesclienteToolStripMenuItem });
+            menuClientes.Location = new Point(0, 0);
+            menuClientes.Name = "menuClientes";
+            menuClientes.Size = new Size(800, 28);
+            menuClientes.TabIndex = 1;
+            menuClientes.Text = "menuStrip1";
+            // 
+            // altaclienteToolStripMenuItem
+            // 
+            altaclienteToolStripMenuItem.Name = "altaclienteToolStripMenuItem";
+            altaclienteToolStripMenuItem.Size = new Size(50, 24);
+            altaclienteToolStripMenuItem.Text = "Alta";
+            altaclienteToolStripMenuItem.Click += altaclienteToolStripMenuItem_Click;
+            // 
+            // bajaclienteToolStripMenuItem
+            // 
+            bajaclienteToolStripMenuItem.Name = "bajaclienteToolStripMenuItem";
+            bajaclienteToolStripMenuItem.Size = new Size(52, 24);
+            bajaclienteToolStripMenuItem.Text = "Baja";
+            bajaclienteToolStripMenuItem.Click += bajaclienteToolStripMenuItem_Click;
+            // 
+            // modificacionesclienteToolStripMenuItem
+            // 
+            modificacionesclienteToolStripMenuItem.Name = "modificacionesclienteToolStripMenuItem";
+            modificacionesclienteToolStripMenuItem.Size = new Size(124, 24);
+            modificacionesclienteToolStripMenuItem.Text = "Modificaciones";
+            modificacionesclienteToolStripMenuItem.Click += modificacionesclienteToolStripMenuItem_Click;
+            // 
+            // btVolver
+            // 
+            btVolver.Location = new Point(694, 409);
+            btVolver.Name = "btVolver";
+            btVolver.Size = new Size(94, 29);
+            btVolver.TabIndex = 2;
+            btVolver.Text = "Volver";
+            btVolver.UseVisualStyleBackColor = true;
+            btVolver.Click += btVolver_Click;
             // 
             // formClientes
             // 
@@ -147,11 +163,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(800, 450);
+            Controls.Add(btVolver);
             Controls.Add(datagridClientes);
             Controls.Add(menuClientes);
             MainMenuStrip = menuClientes;
             Name = "formClientes";
             Text = "Clientes";
+            Load += formClientes_Load;
             ((System.ComponentModel.ISupportInitialize)datagridClientes).EndInit();
             menuClientes.ResumeLayout(false);
             menuClientes.PerformLayout();
@@ -161,18 +179,19 @@
 
         #endregion
 
-        private DataGridView datagridClientes;
-        private DataGridViewTextBoxColumn datagridCodigo;
-        private DataGridViewTextBoxColumn datagridNombre;
-        private DataGridViewTextBoxColumn datagridApellidos;
-        private DataGridViewTextBoxColumn datagridDNI;
-        private DataGridViewTextBoxColumn datagridTelefono;
-        private DataGridViewTextBoxColumn datagridCP;
-        private DataGridViewTextBoxColumn datagridLocalidad;
-        private DataGridViewTextBoxColumn datagridPais;
-        private MenuStrip menuClientes;
-        private ToolStripMenuItem altaclienteToolStripMenuItem;
-        private ToolStripMenuItem bajaclienteToolStripMenuItem;
-        private ToolStripMenuItem modificacionesclienteToolStripMenuItem;
+        public DataGridView datagridClientes;
+        public MenuStrip menuClientes;
+        public ToolStripMenuItem altaclienteToolStripMenuItem;
+        public ToolStripMenuItem bajaclienteToolStripMenuItem;
+        public ToolStripMenuItem modificacionesclienteToolStripMenuItem;
+        public DataGridViewTextBoxColumn datagridCodigo;
+        public DataGridViewTextBoxColumn datagridNombre;
+        public DataGridViewTextBoxColumn datagridApellidos;
+        public DataGridViewTextBoxColumn datagridDNI;
+        public DataGridViewTextBoxColumn datagridTelefono;
+        public DataGridViewTextBoxColumn datagridCP;
+        public DataGridViewTextBoxColumn datagridLocalidad;
+        public DataGridViewTextBoxColumn datagridPais;
+        private Button btVolver;
     }
 }

@@ -34,7 +34,7 @@
             // button1
             // 
             button1.Font = new Font("Arial Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(327, 207);
+            button1.Location = new Point(324, 188);
             button1.Name = "button1";
             button1.Size = new Size(133, 40);
             button1.TabIndex = 0;
@@ -50,7 +50,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(button1);
             Name = "formInicio";
-            Text = "Form1";
+            Text = "Gestión";
             Load += Form1_Load;
             ResumeLayout(false);
         }

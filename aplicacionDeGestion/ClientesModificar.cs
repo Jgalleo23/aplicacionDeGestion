@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace aplicacionDeGestion
 {
-    public partial class formAlta : Form
+    public partial class formModificarCliente : Form
     {
-        public formAlta()
+        public formModificarCliente()
         {
             InitializeComponent();
         }
-
     }
 }

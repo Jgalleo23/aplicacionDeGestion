@@ -14,8 +14,8 @@ namespace aplicacionDeGestion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            formClientes clientes = new formClientes();
-            clientes.Show();
+            formMenu menu = new formMenu();
+            menu.Show();
             this.Hide();
         }
     }

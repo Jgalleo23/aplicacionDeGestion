@@ -39,13 +39,21 @@
             btCancelar = new Button();
             txtDNI = new TextBox();
             lbDNI = new Label();
+            txtTelefono = new TextBox();
+            lbTelefono = new Label();
+            lbCP = new Label();
+            txtCP = new TextBox();
+            lbLocalidad = new Label();
+            comboLocalidad = new ComboBox();
+            txtPais = new TextBox();
+            lbPais = new Label();
             SuspendLayout();
             // 
             // lbTituloAlta
             // 
             lbTituloAlta.AutoSize = true;
             lbTituloAlta.Font = new Font("Arial Black", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            lbTituloAlta.Location = new Point(148, 61);
+            lbTituloAlta.Location = new Point(148, 7);
             lbTituloAlta.Name = "lbTituloAlta";
             lbTituloAlta.Size = new Size(94, 38);
             lbTituloAlta.TabIndex = 0;
@@ -55,7 +63,7 @@
             // 
             lbCodigo.AutoSize = true;
             lbCodigo.Font = new Font("Arial Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbCodigo.Location = new Point(12, 123);
+            lbCodigo.Location = new Point(12, 69);
             lbCodigo.Name = "lbCodigo";
             lbCodigo.Size = new Size(87, 28);
             lbCodigo.TabIndex = 1;
@@ -65,7 +73,7 @@
             // 
             lbNumCodigo.AutoSize = true;
             lbNumCodigo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbNumCodigo.Location = new Point(148, 122);
+            lbNumCodigo.Location = new Point(148, 68);
             lbNumCodigo.Name = "lbNumCodigo";
             lbNumCodigo.Size = new Size(23, 28);
             lbNumCodigo.TabIndex = 2;
@@ -75,7 +83,7 @@
             // 
             lbNombre.AutoSize = true;
             lbNombre.Font = new Font("Arial Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbNombre.Location = new Point(12, 176);
+            lbNombre.Location = new Point(12, 122);
             lbNombre.Name = "lbNombre";
             lbNombre.Size = new Size(97, 28);
             lbNombre.TabIndex = 3;
@@ -83,14 +91,14 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(148, 179);
+            txtNombre.Location = new Point(148, 125);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(146, 27);
             txtNombre.TabIndex = 4;
             // 
             // txtApellidos
             // 
-            txtApellidos.Location = new Point(148, 226);
+            txtApellidos.Location = new Point(148, 172);
             txtApellidos.Name = "txtApellidos";
             txtApellidos.Size = new Size(146, 27);
             txtApellidos.TabIndex = 6;
@@ -99,7 +107,7 @@
             // 
             lbApellidos.AutoSize = true;
             lbApellidos.Font = new Font("Arial Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbApellidos.Location = new Point(12, 226);
+            lbApellidos.Location = new Point(12, 172);
             lbApellidos.Name = "lbApellidos";
             lbApellidos.Size = new Size(113, 28);
             lbApellidos.TabIndex = 5;
@@ -114,6 +122,7 @@
             btOK.TabIndex = 7;
             btOK.Text = "OK";
             btOK.UseVisualStyleBackColor = true;
+            btOK.Click += btOK_Click;
             // 
             // btCancelar
             // 
@@ -127,7 +136,7 @@
             // 
             // txtDNI
             // 
-            txtDNI.Location = new Point(148, 273);
+            txtDNI.Location = new Point(148, 219);
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(146, 27);
             txtDNI.TabIndex = 10;
@@ -136,11 +145,82 @@
             // 
             lbDNI.AutoSize = true;
             lbDNI.Font = new Font("Arial Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbDNI.Location = new Point(12, 270);
+            lbDNI.Location = new Point(12, 216);
             lbDNI.Name = "lbDNI";
             lbDNI.Size = new Size(53, 28);
             lbDNI.TabIndex = 9;
             lbDNI.Text = "DNI";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(148, 263);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(146, 27);
+            txtTelefono.TabIndex = 12;
+            // 
+            // lbTelefono
+            // 
+            lbTelefono.AutoSize = true;
+            lbTelefono.Font = new Font("Arial Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbTelefono.Location = new Point(12, 260);
+            lbTelefono.Name = "lbTelefono";
+            lbTelefono.Size = new Size(105, 28);
+            lbTelefono.TabIndex = 11;
+            lbTelefono.Text = "Teléfono";
+            // 
+            // lbCP
+            // 
+            lbCP.AutoSize = true;
+            lbCP.Font = new Font("Arial Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbCP.Location = new Point(12, 344);
+            lbCP.Name = "lbCP";
+            lbCP.Size = new Size(42, 28);
+            lbCP.TabIndex = 13;
+            lbCP.Text = "CP";
+            // 
+            // txtCP
+            // 
+            txtCP.Location = new Point(148, 347);
+            txtCP.Name = "txtCP";
+            txtCP.Size = new Size(146, 27);
+            txtCP.TabIndex = 14;
+            // 
+            // lbLocalidad
+            // 
+            lbLocalidad.AutoSize = true;
+            lbLocalidad.Font = new Font("Arial Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbLocalidad.Location = new Point(12, 301);
+            lbLocalidad.Name = "lbLocalidad";
+            lbLocalidad.Size = new Size(117, 28);
+            lbLocalidad.TabIndex = 15;
+            lbLocalidad.Text = "Localidad";
+            // 
+            // comboLocalidad
+            // 
+            comboLocalidad.FormattingEnabled = true;
+            comboLocalidad.Items.AddRange(new object[] { "Almeria", "Cadiz", "Cordoba", "Granada", "Huelva", "Jaen", "Malaga", "Sevilla" });
+            comboLocalidad.Location = new Point(148, 304);
+            comboLocalidad.Name = "comboLocalidad";
+            comboLocalidad.Size = new Size(146, 28);
+            comboLocalidad.TabIndex = 16;
+            comboLocalidad.SelectedValueChanged += comboLocalidad_SelectedValueChanged;
+            // 
+            // txtPais
+            // 
+            txtPais.Location = new Point(148, 386);
+            txtPais.Name = "txtPais";
+            txtPais.Size = new Size(146, 27);
+            txtPais.TabIndex = 18;
+            // 
+            // lbPais
+            // 
+            lbPais.AutoSize = true;
+            lbPais.Font = new Font("Arial Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbPais.Location = new Point(12, 383);
+            lbPais.Name = "lbPais";
+            lbPais.Size = new Size(58, 28);
+            lbPais.TabIndex = 17;
+            lbPais.Text = "País";
             // 
             // formAlta
             // 
@@ -148,6 +228,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(400, 515);
+            Controls.Add(txtPais);
+            Controls.Add(lbPais);
+            Controls.Add(comboLocalidad);
+            Controls.Add(lbLocalidad);
+            Controls.Add(txtCP);
+            Controls.Add(lbCP);
+            Controls.Add(txtTelefono);
+            Controls.Add(lbTelefono);
             Controls.Add(txtDNI);
             Controls.Add(lbDNI);
             Controls.Add(btCancelar);
@@ -178,5 +266,13 @@
         public Button btCancelar;
         public TextBox txtDNI;
         public Label lbDNI;
+        public TextBox txtTelefono;
+        public Label lbTelefono;
+        public Label lbCP;
+        public TextBox txtCP;
+        public Label lbLocalidad;
+        public ComboBox comboLocalidad;
+        public TextBox txtPais;
+        public Label lbPais;
     }
 }
